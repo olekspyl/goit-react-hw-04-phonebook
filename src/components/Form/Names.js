@@ -4,21 +4,21 @@ import { nanoid } from 'nanoid'
 
 class Names extends Component {
     state = {
-        name: ''
-
+      name: '',
+      id: '',
     }
 
     handleChange = e => {
         const { name, value } = e.target;
-    this.setState({ [name]: value })
+      this.setState({ [name]: value });
     
   } 
   
   handleSubmit = e => {
     e.preventDefault();
-      this.setState({ name: ' ' })
+    this.setState({ name: ' ' });
       
-    this.props.onSubmit(this.state)  
+    console.log(this.props.onSubmit(this.state));  
   };
   
     render() {
@@ -35,12 +35,12 @@ class Names extends Component {
         name="name"
         value={this.state.name}
         onChange={this.handleChange}
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
     </label>
-     <button type="submit">Add contact</button>
+     <button type="submit">Add contact</button>     
         </form>
     ) 
     }
