@@ -4,9 +4,9 @@ import React from "react";
 const Contacts = ({ contacts }) => {
     return (
         <ul>
-            {contacts.map((contact, idx) => {
+            {contacts.map((contact, id) => {
                 return (
-                    <li key={idx}>{contact.name} {contact.number }</li>
+                    <li key={id}>{contact.name} {contact.number }</li>
                 )}
                 )}
          </ul>

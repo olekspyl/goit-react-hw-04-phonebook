@@ -1,13 +1,13 @@
 import React from "react";
 
-const Filter = ({onFilter, filterValue}) => {
+const Filter = ({formFilterChange, filter}) => {
     return (
         <label>
         <input
             type="text"
               name="filter"
-              value={filterValue}
-              onChange={onFilter}
+              value={filter}
+              onChange={formFilterChange}
             />  
             </label>
     )
