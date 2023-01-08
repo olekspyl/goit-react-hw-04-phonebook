@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { nanoid } from 'nanoid'
+import {FormEl, Label, Button, Input} from './App.styled'
 
 class Form extends Component {
     state = {
@@ -37,10 +38,10 @@ this.setState({ name: ' ', number: ' ' });
     render() {
       const { id, name, number } = this.state;
        return (
-        <form onSubmit={this.handleSubmit}>
-    <label htmlFor={id}>
+        <FormEl onSubmit={this.handleSubmit}>
+    <Label htmlFor={id}>
       Name
-      <input
+      <Input
         id={id}
         type="text"
         name="name"
@@ -50,10 +51,10 @@ this.setState({ name: ' ', number: ' ' });
         // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-           </label>
-           <label htmlFor={id}>
+           </Label>
+           <Label htmlFor={id}>
              Phone number
-             <input
+             <Input
                id={id}
                type="tel"
                name="number"
@@ -64,10 +65,10 @@ this.setState({ name: ' ', number: ' ' });
                 // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
              />
-           </label>
+           </Label>
            
-     <button type="submit">Add contact</button>     
-        </form>
+     <Button type="submit">Add contact</Button>     
+        </FormEl>
     ) 
     }
 

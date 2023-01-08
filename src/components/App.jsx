@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Form from './Form/Form';
 import Contacts from "./Form/Contacts";
 import Filter from './Form/Filter';
+import {Title, TitleContacts, TitleFind, WrapToFind} from './Form/App.styled'
 
 export class App extends Component {
   state = {
@@ -55,11 +56,13 @@ export class App extends Component {
 
     return (
       <div>
-        <h1>Phonebook</h1>
+        <Title>Phonebook</Title>
         <Form onSubmit={this.addContact} />
-          <h2>Contacts</h2>
-          <h2>Find contacts by name</h2>
-        <Filter formFilterChange={this.formFilterChange} filter={filter} />
+        <TitleContacts>Contacts</TitleContacts>
+        <WrapToFind>
+          <TitleFind>Find contacts by name</TitleFind>
+          <Filter formFilterChange={this.formFilterChange} filter={filter} />
+          </WrapToFind>
         <Contacts contacts={filteredElements} onDelete={this.deleteContact} />
         
       </div>
