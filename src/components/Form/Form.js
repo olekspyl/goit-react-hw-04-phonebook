@@ -6,7 +6,7 @@ class Form extends Component {
     state = {
       name: '',
       number: '',
-      id: ''
+      id: nanoid(),
     }
 
     handleChange = e => {

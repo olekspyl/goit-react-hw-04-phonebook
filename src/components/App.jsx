@@ -10,6 +10,12 @@ export class App extends Component {
   filter: '',
   };
 
+  deleteContact = (id) => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
   addContact = ({ id, name, number }) => {
     const { contacts } = this.state;
     if (
@@ -43,7 +49,7 @@ export class App extends Component {
   render() {
     const { contacts, filter } = this.state;
 
-    const normalizedElem = filter.toLocaleLowerCase();
+    const normalizedElem = filter.toLowerCase();
     const filteredElements = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedElem));
 
@@ -54,7 +60,7 @@ export class App extends Component {
           <h2>Contacts</h2>
           <h2>Find contacts by name</h2>
         <Filter formFilterChange={this.formFilterChange} filter={filter} />
-          <Contacts contacts={filteredElements} />
+        <Contacts contacts={filteredElements} onDelete={this.deleteContact} />
         
       </div>
     );

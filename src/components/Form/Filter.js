@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Filter = ({formFilterChange, filter}) => {
     return (
@@ -11,6 +12,11 @@ const Filter = ({formFilterChange, filter}) => {
             />  
             </label>
     )
+}
+
+Filter.propTypes = {
+  formFilterChange: PropTypes.func.isRequired, 
+  filter: PropTypes.string.isRequired,
 }
 
 export default Filter;
