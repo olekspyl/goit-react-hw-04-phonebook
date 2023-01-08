@@ -49,18 +49,15 @@ margin-left: 20px;
 
 export const Title = styled.h1`
 display: flex;
-justify-content: center;
-margin: 0px;
+margin: 0 0 0 50px;
 `
 
 export const TitleContacts = styled.h2`
 display: flex;
-justify-content: center;
-margin: 20px 0 0 0;
+margin: 20px 0 0 50px;
 `
 export const TitleFind = styled.h2`
-margin-left: 20px;
-margin-right: 10px;
+margin: 10px 10px 10px 20px;
 font-size: 14px;
 color: grey;
 `
@@ -72,6 +69,7 @@ align-items: center;
 
 export const ListItem = styled.li`
 list-style: none;
+margin-bottom: 20px;
 `
 
 export const DeleteButton = styled.button`
