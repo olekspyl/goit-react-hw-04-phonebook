@@ -9,6 +9,10 @@ export default function Form({onSubmit}) {
   const [number, setNumber] = useState('');
   const id = nanoid();
 
+// ще один варіант рішення
+//   const [form, setForm] = useState({ name: '', number: '' });
+//   const handleChange = e => {    const { name, value } = e.currentTarget;    setForm(prevForm => ({ ...prevForm, [name]: value }));  };
+  
  const handleChange = e => {
     e.target.value.trim();
     const { name, value } = e.target;
